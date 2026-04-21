@@ -1,5 +1,8 @@
-.env
+data/
 .venv/
+.env
+.idea/
 __pycache__/
 *.pyc
-.idea/
+chroma_db/
+faiss_index/
