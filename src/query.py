@@ -12,8 +12,9 @@ def load_vectorstore() -> FAISS:
         model="text-embedding-3-small",
         api_key=os.getenv("OPENAI_API_KEY")
     )
+    index_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "faiss_index")
     vectorstore = FAISS.load_local(
-        "faiss_index",
+        index_path,
         embeddings,
         allow_dangerous_deserialization=True
     )
